@@ -27,7 +27,7 @@ public void draw()
  
     float d = dist ((float)ship.getX(), (float)ship.getY(), (float)rocks.get(i).getX(), (float)rocks.get(i).getY());
     if (d < 80)
-      rocks.removet(i);
+      rocks.remove(i);
   }
 }
 
