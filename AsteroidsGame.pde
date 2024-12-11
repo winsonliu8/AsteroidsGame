@@ -24,10 +24,14 @@ public void draw()
   for (int i = 0; i < rocks.size(); i++) {
     rocks.get(i).move();
     rocks.get(i).show();
- 
+  }
+
+  for (int i = 0; i < rocks.size(); i++) {
     float d = dist ((float)ship.getX(), (float)ship.getY(), (float)rocks.get(i).getX(), (float)rocks.get(i).getY());
-    if (d < 25)
+    if (d < 30) {
       rocks.remove(i);
+      i--;
+    }
   }
 }
 
