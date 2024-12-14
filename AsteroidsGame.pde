@@ -59,17 +59,20 @@ public void draw()
        i--;
      }
   }
-  for (int i = 0; i < shots.size(); i++){
-    for (int b = 0; b < rocks.size(); b++){
-    float a = dist ((float)shots.get(i).getX(), (float)shots.get(i).getY(), (float)rocks.get(b).getX(), (float)rocks.get(b).getY());
-    if (a < 26) {
-      shots.remove (i);
-      rocks.remove (b);
-      break; 
-    }
+  for (int i = 0; i < shots.size(); i++) {
+    for (int b = 0; b < rocks.size(); b++) {
+      float a = dist ((float)shots.get(i).getX(), (float)shots.get(i).getY(), (float)rocks.get(b).getX(), (float)rocks.get(b).getY());
+      if (a < 26) {
+        shots.remove (i);
+        rocks.remove (b);
+        i--; 
+        b--;
+        break;
+      }
     }
   }
 }
+
 
 public void keyPressed () {
   if (key == 'h') { //hyperspace
